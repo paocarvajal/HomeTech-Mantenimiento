@@ -220,20 +220,22 @@ body {
   .concepts-tbl td.row-num-cell { display: block; position: absolute; top: -10px; left: 10px; background: #000; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 8pt; font-weight: 700; }
   .concepts-tbl td.row-num-cell::before { display: none; }
   
-  .concepts-tbl td.del-cell { position: absolute; top: 8px; right: 8px; width: auto; z-index: 10; }
+  .concepts-tbl td.del-cell { position: absolute; bottom: 12px; left: 12px; width: auto; z-index: 10; }
   .concepts-tbl td.del-cell::before { display: none; }
   
   .concepts-tbl td.desc-cell { padding-top: 15px; } /* Space for the floating number */
   
   /* Make inputs look like boxes on mobile */
   .concepts-tbl input, .concepts-tbl select, .concepts-tbl textarea { 
-    background: #f9f9f9 !important; 
-    border: 1px solid #ccc !important; 
-    border-radius: 4px !important; 
-    padding: 8px !important;
-    min-height: 40px;
+    background: #fff !important; 
+    border: 1px solid #555 !important; 
+    border-radius: 6px !important; 
+    padding: 10px !important;
+    min-height: 44px;
+    font-size: 11pt !important;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
   }
-  .desc-pick-btn { height: calc(100% - 16px); top: 8px; right: 0; border-radius: 0 4px 4px 0; }
+  .desc-pick-btn { height: calc(100% - 20px); top: 10px; right: 0; border-radius: 0 6px 6px 0; width: 48px; }
 }
 
 /* ============================================================
