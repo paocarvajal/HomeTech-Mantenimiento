@@ -740,26 +740,59 @@ body { padding-top: 52px; }
     width: 100%;
     margin: 0;
     padding: 0;
+    padding-bottom: 15mm; /* Space for the fixed footer */
     box-shadow: none;
-    min-height: auto !important; /* Allow it to be shorter than letter height if needed */
+    min-height: auto !important; 
+  }
+
+  /* Fixed Footer in Print */
+  .doc-footer-bar {
+    position: fixed;
+    bottom: 0;
+    left: 14mm; /* Match page margins */
+    right: 14mm;
+    margin: 0 !important;
+    background: #fff;
+    padding: 8px 0;
+    border-top: 1px solid #bbb;
+    z-index: 9999;
   }
 
   /* Reduce spacer in print to keep things tight if near the end of page */
   #page-spacer {
-    flex: 1 1 auto;
-    min-height: 0;
+    display: none; /* Spacer not needed with fixed footer */
   }
 
   /* Restore table layout (mobile CSS converts to block) */
-  .concepts-tbl,
-  .concepts-tbl tbody { display: table; width: 100%; }
-  .concepts-tbl thead { display: table-header-group; }  /* repeats on each page */
-  .concepts-tbl tbody tr { display: table-row; border: none; border-radius: 0;
-    margin: 0; padding: 0; box-shadow: none; }
-  .concepts-tbl tbody td { display: table-cell; border: 1px solid #bbb; padding: 2px 7px; }
-  .concepts-tbl tbody td::before { display: none; }
-  .concepts-tbl tbody td.del-cell,
-  .concepts-tbl tbody td.row-num-cell { display: table-cell; position: static; }
+  .concepts-tbl { 
+    display: table !important; 
+    width: 100% !important; 
+    table-layout: fixed !important; 
+    border-collapse: collapse !important;
+  }
+  .concepts-tbl thead { display: table-header-group !important; }
+  .concepts-tbl tbody { display: table-row-group !important; }
+  .concepts-tbl tr { display: table-row !important; page-break-inside: avoid; }
+  .concepts-tbl th,
+  .concepts-tbl td { 
+    display: table-cell !important; 
+    border: 1px solid #bbb !important; 
+    padding: 4px 6px !important;
+    vertical-align: middle !important;
+  }
+
+  /* Force col widths in print */
+  .concepts-tbl col.c-no   { width: 35px !important; }
+  .concepts-tbl col.c-desc { width: auto !important; }
+  .concepts-tbl col.c-qty  { width: 50px !important; }
+  .concepts-tbl col.c-unit { width: 80px !important; }
+  .concepts-tbl col.c-pu   { width: 90px !important; }
+  .concepts-tbl col.c-imp  { width: 90px !important; }
+  .concepts-tbl col.c-del  { width: 0 !important; display: none !important; }
+  .concepts-tbl .del-cell  { display: none !important; }
+  .concepts-tbl th.no-print, .concepts-tbl td.no-print { display: none !important; }
+
+  .concepts-tbl tbody td::before { display: none !important; }
 
   /* Compact textareas in print */
   .concepts-tbl textarea {
