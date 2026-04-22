@@ -26,6 +26,8 @@ body {
   font-size: 10.5pt;
   color: var(--dark);
   background: var(--bg);
+  padding-top: 52px;
+  overflow-x: hidden;
 }
 
 /* ============================================================
@@ -61,7 +63,6 @@ body {
 #toolbar .divider { width: 1px; height: 22px; background: #444; margin: 0 4px; }
 #toolbar .lbl { font-size: 8.5pt; color: #aaa; }
 
-body { padding-top: 52px; }
 
 /* ============================================================
    PAGE SHELL  –  simulates letter paper on screen
@@ -115,6 +116,11 @@ body { padding-top: 52px; }
 .client-field.full { flex: 1 0 100%; }
 .client-field .lbl { font-weight: 700; font-size: 9pt; padding: 6px 10px; background: #f7f7f7; border-right: 1px solid #ccc; flex-shrink: 0; }
 .client-field input { border: none; outline: none; font-family: var(--font); font-size: 9.5pt; width: 100%; background: transparent; padding: 6px 10px; min-width: 0; }
+/* Screen-only input indicators */
+@media screen {
+  .client-field input:focus, .concepts-tbl input:focus, .concepts-tbl textarea:focus { background: #fff; box-shadow: inset 0 0 0 2px #1558a022; }
+  .client-field input, .concepts-tbl input, .concepts-tbl textarea { transition: background 0.2s; }
+}
 
 /* ============================================================
    CONCEPTS TABLE
@@ -140,13 +146,13 @@ body { padding-top: 52px; }
 .concepts-tbl input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; }
 .unit-select { -webkit-appearance: none; appearance: none; text-align: center; cursor: pointer; font-size: 8.5pt; }
 .desc-cell { position: relative; }
-.desc-cell textarea { padding-right: 22px; }
-.desc-pick-btn { position: absolute; right: 0; top: 0; width: 22px; height: 100%; display: flex; align-items: center; justify-content: center; background: #efefef; border-left: 1px solid #ccc; cursor: pointer; font-size: 10pt; color: #555; border: none; }
-.desc-pick-btn:hover { background: #ddd; color: #000; }
-.btn-del { background: none; border: none; color: #999; font-size: 14pt; cursor: pointer; width: 100%; text-align: center; }
-.btn-del:hover { color: #c00; }
-.add-row-btn { display: inline-flex; align-items: center; gap: 5px; margin-top: 6px; font-family: var(--font); font-size: 9pt; background: none; border: 1px dashed #777; color: #555; padding: 4px 12px; border-radius: 2px; cursor: pointer; }
-.add-row-btn:hover { border-color: #333; color: #000; background: #f5f5f5; }
+.desc-cell textarea { padding-right: 44px; min-height: 38px; }
+.desc-pick-btn { position: absolute; right: 0; top: 0; width: 44px; height: 100%; display: flex; align-items: center; justify-content: center; background: #f0f0f0; border: none; border-left: 1px solid #ccc; cursor: pointer; font-size: 14pt; color: #333; transition: background 0.2s; }
+.desc-pick-btn:hover { background: #e0e0e0; }
+.btn-del { background: #fee; border: 1px solid #fcc; color: #c00; font-size: 16pt; cursor: pointer; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 4px; transition: all 0.2s; }
+.btn-del:hover { background: #fdd; color: #a00; }
+.add-row-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 10px; font-family: var(--font); font-size: 10pt; background: #fff; border: 2px dashed #999; color: #333; padding: 10px 20px; border-radius: 6px; cursor: pointer; transition: all 0.2s; }
+.add-row-btn:hover { border-color: #1558a0; color: #1558a0; background: #f0f7ff; }
 
 /* ============================================================
    TOTALS
@@ -194,17 +200,47 @@ body { padding-top: 52px; }
   #page { width: 100%; margin: 10px 0 20px; padding: 14px 16px; }
 }
 @media screen and (max-width: 560px) {
-  #toolbar { padding: 6px 8px; justify-content: center; }
-  #page { padding: 12px 10px; }
+  #toolbar { padding: 10px 14px; justify-content: center; gap: 10px; }
+  #toolbar button { padding: 8px 16px; font-size: 10pt; flex: 1 1 40%; }
+  #page { padding: 10px 12px; min-height: auto; width: 100vw; margin: 0; border-radius: 0; }
+  .doc-header { flex-direction: column; text-align: center; gap: 10px; }
+  .quote-meta { text-align: center; align-items: center; display: flex; flex-direction: column; }
+  .folio-line { align-items: center; }
+  
   .client-row { flex-direction: column; }
   .client-field + .client-field { border-left: none; border-top: 1px solid #ddd; }
+  .client-field .lbl { min-width: 90px; }
+
   .concepts-tbl thead { display: none; }
   .concepts-tbl, .concepts-tbl tbody, .concepts-tbl tr { display: block; width: 100%; }
-  .concepts-tbl tr { border: 1px solid #bbb; margin-bottom: 10px; padding: 8px 10px; position: relative; }
-  .concepts-tbl td { display: flex; border: none; padding: 3px 0; }
-  .concepts-tbl td::before { content: attr(data-label); font-weight: 700; font-size: 8pt; min-width: 80px; color: #666; }
-  .concepts-tbl td.row-num-cell { display: none; }
-  .concepts-tbl td.del-cell { position: absolute; top: 6px; right: 6px; width: auto; }
+  .concepts-tbl tr { 
+    border: 1px solid #aaa; 
+    margin-bottom: 16px; 
+    padding: 12px; 
+    position: relative; 
+    border-radius: 8px; 
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+  }
+  .concepts-tbl td { display: flex; flex-direction: column; border: none; padding: 6px 0; font-size: 10.5pt; }
+  .concepts-tbl td::before { content: attr(data-label); font-weight: 700; font-size: 8pt; color: #888; text-transform: uppercase; margin-bottom: 2px; }
+  .concepts-tbl td.row-num-cell { display: block; position: absolute; top: -10px; left: 10px; background: #000; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 8pt; font-weight: 700; }
+  .concepts-tbl td.row-num-cell::before { display: none; }
+  
+  .concepts-tbl td.del-cell { position: absolute; top: 8px; right: 8px; width: auto; z-index: 10; }
+  .concepts-tbl td.del-cell::before { display: none; }
+  
+  .concepts-tbl td.desc-cell { padding-top: 15px; } /* Space for the floating number */
+  
+  /* Make inputs look like boxes on mobile */
+  .concepts-tbl input, .concepts-tbl select, .concepts-tbl textarea { 
+    background: #f9f9f9 !important; 
+    border: 1px solid #ccc !important; 
+    border-radius: 4px !important; 
+    padding: 8px !important;
+    min-height: 40px;
+  }
+  .desc-pick-btn { height: calc(100% - 16px); top: 8px; right: 0; border-radius: 0 4px 4px 0; }
 }
 
 /* ============================================================
