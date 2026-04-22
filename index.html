@@ -741,7 +741,13 @@ body { padding-top: 52px; }
     margin: 0;
     padding: 0;
     box-shadow: none;
-    min-height: 100vh;
+    min-height: auto !important; /* Allow it to be shorter than letter height if needed */
+  }
+
+  /* Reduce spacer in print to keep things tight if near the end of page */
+  #page-spacer {
+    flex: 1 1 auto;
+    min-height: 0;
   }
 
   /* Restore table layout (mobile CSS converts to block) */
@@ -750,10 +756,16 @@ body { padding-top: 52px; }
   .concepts-tbl thead { display: table-header-group; }  /* repeats on each page */
   .concepts-tbl tbody tr { display: table-row; border: none; border-radius: 0;
     margin: 0; padding: 0; box-shadow: none; }
-  .concepts-tbl tbody td { display: table-cell; border: 1px solid #bbb; padding: 4px 7px; }
+  .concepts-tbl tbody td { display: table-cell; border: 1px solid #bbb; padding: 2px 7px; }
   .concepts-tbl tbody td::before { display: none; }
   .concepts-tbl tbody td.del-cell,
   .concepts-tbl tbody td.row-num-cell { display: table-cell; position: static; }
+
+  /* Compact textareas in print */
+  .concepts-tbl textarea {
+    line-height: 1.1;
+    font-size: 9pt;
+  }
 
   /* Restore client section */
   .client-row { flex-direction: row; }
@@ -763,11 +775,14 @@ body { padding-top: 52px; }
   .concepts-tbl tr  { page-break-inside: avoid; }
   #page-bottom      { page-break-inside: avoid; }
   .totals-row       { page-break-inside: avoid; }
+  .conditions       { margin-top: 10px; page-break-inside: avoid; }
+  .signature-block  { margin-top: 15px; page-break-inside: avoid; }
 
   /* force B&W */
   .concepts-tbl th { background: #000 !important; color: #fff !important; }
   .totals-tbl .tr-total td { background: #000 !important; color: #fff !important; }
-  .client-field .lbl { background: #e8e8e8 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .client-field .lbl { background: #f0f0f0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  
   /* Totals: stretch to full width in print */
   .totals-row { justify-content: flex-end; }
   .totals-tbl { width: auto; min-width: 230px; }
@@ -1020,6 +1035,27 @@ body { padding-top: 52px; }
       <div class="sug-item" onclick="pickDesc(this)">Instalación de bomba de agua</div>
       <div class="sug-item" onclick="pickDesc(this)">Cambio de mangueras flexibles</div>
       <div class="sug-item" onclick="pickDesc(this)">Instalación de regadera y mezcladora de baño</div>
+      <div class="sug-item" onclick="pickDesc(this)">Limpieza de trampa de grasa</div>
+      <div class="sug-item" onclick="pickDesc(this)">Suministro e instalación de calentador de paso</div>
+      <div class="sug-item" onclick="pickDesc(this)">Cambio de válvula de llenado y pera de descarga</div>
+      <div class="sug-item" onclick="pickDesc(this)">Instalación de purificador de agua bajo tarja</div>
+      <div class="sug-item" onclick="pickDesc(this)">Reparación de filtración en muro (tubo roto)</div>
+      <div class="sug-item" onclick="pickDesc(this)">Limpieza y desinfección de tinaco</div>
+      <div class="sug-item" onclick="pickDesc(this)">Mantenimiento preventivo a hidroneumático</div>
+      <div class="sug-item" onclick="pickDesc(this)">Sello de juntas con silicón antihongos</div>
+      <div class="sug-item" onclick="pickDesc(this)">Instalación de kit de accesorios para baño</div>
+      <div class="sug-item" onclick="pickDesc(this)">Cambio de tubería de gas (cobre/Pe-Al-Pe)</div>
+      <div class="sug-item" onclick="pickDesc(this)">Instalación de estufa o parrilla de gas</div>
+      <div class="sug-item" onclick="pickDesc(this)">Reparación de fuga en llave de paso general</div>
+      <div class="sug-item" onclick="pickDesc(this)">Sondeo de coladera de piso en regadera</div>
+      <div class="sug-item" onclick="pickDesc(this)">Cambio de céspol de cocina (fregadero)</div>
+      <div class="sug-item" onclick="pickDesc(this)">Instalación de triturador de desperdicios</div>
+      <div class="sug-item" onclick="pickDesc(this)">Prueba de hermeticidad en línea de gas</div>
+      <div class="sug-item" onclick="pickDesc(this)">Cambio de flotador en tinaco</div>
+      <div class="sug-item" onclick="pickDesc(this)">Instalación de tarja de acero inoxidable</div>
+      <div class="sug-item" onclick="pickDesc(this)">Mantenimiento a calentador solar</div>
+      <div class="sug-item" onclick="pickDesc(this)">Cambio de empaques en mezcladora</div>
+      <div class="sug-item" onclick="pickDesc(this)">Desazolve de registros internos</div>
 
       <div class="cat-title">Electricidad</div>
       <div class="sug-item" onclick="pickDesc(this)">Cambio de apagador</div>
@@ -1032,6 +1068,26 @@ body { padding-top: 52px; }
       <div class="sug-item" onclick="pickDesc(this)">Tendido de línea eléctrica (por metro lineal)</div>
       <div class="sug-item" onclick="pickDesc(this)">Instalación de ventilador de techo</div>
       <div class="sug-item" onclick="pickDesc(this)">Canalización en tubería conduit</div>
+      <div class="sug-item" onclick="pickDesc(this)">Instalación de timbre inalámbrico/alámbrico</div>
+      <div class="sug-item" onclick="pickDesc(this)">Montaje de soporte para TV y canalización</div>
+      <div class="sug-item" onclick="pickDesc(this)">Instalación de sensor de movimiento</div>
+      <div class="sug-item" onclick="pickDesc(this)">Cambio de luminaria a panel LED</div>
+      <div class="sug-item" onclick="pickDesc(this)">Instalación de tira LED en bajo alacena</div>
+      <div class="sug-item" onclick="pickDesc(this)">Revisión de tierras físicas</div>
+      <div class="sug-item" onclick="pickDesc(this)">Balanceo de cargas en tablero</div>
+      <div class="sug-item" onclick="pickDesc(this)">Instalación de interruptor de escalera (3-way)</div>
+      <div class="sug-item" onclick="pickDesc(this)">Cambio de clavija en electrodomésticos</div>
+      <div class="sug-item" onclick="pickDesc(this)">Instalación de detector de humo</div>
+      <div class="sug-item" onclick="pickDesc(this)">Mantenimiento a tablero principal</div>
+      <div class="sug-item" onclick="pickDesc(this)">Instalación de regulador de voltaje</div>
+      <div class="sug-item" onclick="pickDesc(this)">Cambio de fotocelda para exterior</div>
+      <div class="sug-item" onclick="pickDesc(this)">Instalación de videoportero</div>
+      <div class="sug-item" onclick="pickDesc(this)">Peinado de cables en gabinete</div>
+      <div class="sug-item" onclick="pickDesc(this)">Instalación de toma USB empotrada</div>
+      <div class="sug-item" onclick="pickDesc(this)">Prueba de continuidad en circuitos</div>
+      <div class="sug-item" onclick="pickDesc(this)">Instalación de barra de contactos</div>
+      <div class="sug-item" onclick="pickDesc(this)">Reemplazo de balastra</div>
+      <div class="sug-item" onclick="pickDesc(this)">Instalación de sistema UPS</div>
 
       <div class="cat-title">Albañilería</div>
       <div class="sug-item" onclick="pickDesc(this)">Resane de muro</div>
@@ -1044,6 +1100,26 @@ body { padding-top: 52px; }
       <div class="sug-item" onclick="pickDesc(this)">Construcción de muro de block/tabique (m²)</div>
       <div class="sug-item" onclick="pickDesc(this)">Pintura vinílica interior/exterior (m²)</div>
       <div class="sug-item" onclick="pickDesc(this)">Demolición y retiro de escombro</div>
+      <div class="sug-item" onclick="pickDesc(this)">Fabricación de pretil de cocina</div>
+      <div class="sug-item" onclick="pickDesc(this)">Zarpeo y afine de barda</div>
+      <div class="sug-item" onclick="pickDesc(this)">Construcción de dala de desplante</div>
+      <div class="sug-item" onclick="pickDesc(this)">Aplicación de estuco veneciano</div>
+      <div class="sug-item" onclick="pickDesc(this)">Fabricación de firme de concreto</div>
+      <div class="sug-item" onclick="pickDesc(this)">Instalación de molduras de poliestireno</div>
+      <div class="sug-item" onclick="pickDesc(this)">Reparación de salitre en muros</div>
+      <div class="sug-item" onclick="pickDesc(this)">Fabricación de nicho en regadera</div>
+      <div class="sug-item" onclick="pickDesc(this)">Colocación de cantera o fachada</div>
+      <div class="sug-item" onclick="pickDesc(this)">Nivelación de piso para laminado</div>
+      <div class="sug-item" onclick="pickDesc(this)">Construcción de registro pluvial</div>
+      <div class="sug-item" onclick="pickDesc(this)">Tapado de ranuras de instalaciones</div>
+      <div class="sug-item" onclick="pickDesc(this)">Sellado de ventanas con poliuretano</div>
+      <div class="sug-item" onclick="pickDesc(this)">Reparación de escalones</div>
+      <div class="sug-item" onclick="pickDesc(this)">Aplicación de sellador acrílico</div>
+      <div class="sug-item" onclick="pickDesc(this)">Construcción de jardinera</div>
+      <div class="sug-item" onclick="pickDesc(this)">Instalación de Block de Vidrio</div>
+      <div class="sug-item" onclick="pickDesc(this)">Resane y pintura de marcos</div>
+      <div class="sug-item" onclick="pickDesc(this)">Aplicación de pasta acrílica</div>
+      <div class="sug-item" onclick="pickDesc(this)">Reparación de juntas en azotea</div>
 
       <div class="cat-title">Mantenimiento General</div>
       <div class="sug-item" onclick="pickDesc(this)">Servicio general de mantenimiento</div>
@@ -1051,6 +1127,26 @@ body { padding-top: 52px; }
       <div class="sug-item" onclick="pickDesc(this)">Revisión técnica</div>
       <div class="sug-item" onclick="pickDesc(this)">Diagnóstico de instalación</div>
       <div class="sug-item" onclick="pickDesc(this)">Ajustes y reparación menor</div>
+      <div class="sug-item" onclick="pickDesc(this)">Lavado a presión de exteriores (Karcher)</div>
+      <div class="sug-item" onclick="pickDesc(this)">Engrasado de bisagras y chapas</div>
+      <div class="sug-item" onclick="pickDesc(this)">Ajuste de puertas de clóset y gabinetes</div>
+      <div class="sug-item" onclick="pickDesc(this)">Barnizado de puertas de madera</div>
+      <div class="sug-item" onclick="pickDesc(this)">Limpieza de rieles de ventanales</div>
+      <div class="sug-item" onclick="pickDesc(this)">Retiro de maleza y limpieza de jardín</div>
+      <div class="sug-item" onclick="pickDesc(this)">Barnizado de pérgolas o estructuras</div>
+      <div class="sug-item" onclick="pickDesc(this)">Limpieza de aire acondicionado (filtros)</div>
+      <div class="sug-item" onclick="pickDesc(this)">Revisión perimetral de seguridad</div>
+      <div class="sug-item" onclick="pickDesc(this)">Ajuste de herrajes en ventanas</div>
+      <div class="sug-item" onclick="pickDesc(this)">Aplicación de protector para muebles</div>
+      <div class="sug-item" onclick="pickDesc(this)">Limpieza de canaletas de lluvia</div>
+      <div class="sug-item" onclick="pickDesc(this)">Retoque de pintura en herrería</div>
+      <div class="sug-item" onclick="pickDesc(this)">Instalación de cortineros y persianas</div>
+      <div class="sug-item" onclick="pickDesc(this)">Armado de muebles tipo RTA</div>
+      <div class="sug-item" onclick="pickDesc(this)">Cambio de mosquiteros</div>
+      <div class="sug-item" onclick="pickDesc(this)">Limpieza de vidrios en altura</div>
+      <div class="sug-item" onclick="pickDesc(this)">Sellado de domos y tragaluces</div>
+      <div class="sug-item" onclick="pickDesc(this)">Revisión de extractores de baño</div>
+      <div class="sug-item" onclick="pickDesc(this)">Pulido y encerado de pisos</div>
 
     </div>
     <div class="modal-foot">
