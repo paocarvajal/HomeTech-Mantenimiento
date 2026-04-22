@@ -77,9 +77,6 @@ body { padding-top: 52px; }
   padding: 14mm 17mm 12mm 17mm;
 }
 
-/* ── Responsive: tablet & mobile (overrides at the end) ── */
-
-/* top section grows to push bottom section down */
 #page-top    { flex: 0 0 auto; }
 #page-spacer { flex: 1 1 auto; min-height: 20px; }
 #page-bottom { flex: 0 0 auto; }
@@ -95,779 +92,188 @@ body { padding-top: 52px; }
   border-bottom: 2px solid var(--black);
   margin-bottom: 10px;
 }
-
-/* ── SVG Logo ── */
 .logo-wrap { flex: 0 0 auto; width: 80px; }
 .logo-wrap svg { display: block; width: 80px; height: 80px; }
-
-/* ── Company info ── */
 .company-info { flex: 1 1 auto; }
-.company-name {
-  font-size: 20pt;
-  font-weight: 900;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  line-height: 1;
-}
-.company-sub {
-  font-size: 8pt;
-  color: var(--mid);
-  margin-top: 4px;
-  letter-spacing: .5px;
-}
-
-/* ── Quote meta (right side) ── */
+.company-name { font-size: 20pt; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; line-height: 1; }
+.company-sub { font-size: 8pt; color: var(--mid); margin-top: 4px; letter-spacing: .5px; }
 .quote-meta { flex: 0 0 auto; text-align: right; }
-.quote-title {
-  font-size: 17pt;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  line-height: 1;
-}
-.folio-line {
-  font-size: 8.5pt;
-  margin-top: 6px;
-  color: var(--mid);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 2px;
-}
+.quote-title { font-size: 17pt; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; line-height: 1; }
+.folio-line { font-size: 8.5pt; margin-top: 6px; color: var(--mid); display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
 .folio-line strong { color: var(--dark); font-size: 9pt; }
-.folio-line button {
-  font-family: var(--font);
-  font-size: 7.5pt;
-  background: none;
-  border: 1px solid var(--mid);
-  color: var(--mid);
-  padding: 1px 7px;
-  border-radius: 2px;
-  cursor: pointer;
-  margin-top: 2px;
-}
+.folio-line button { font-family: var(--font); font-size: 7.5pt; background: none; border: 1px solid var(--mid); color: var(--mid); padding: 1px 7px; border-radius: 2px; cursor: pointer; margin-top: 2px; }
 .folio-line button:hover { background: #f0f0f0; }
 
 /* ============================================================
-   CLIENT INFO — div-based (responsive-friendly)
+   CLIENT INFO
    ============================================================ */
-.client-box {
-  border: 1px solid var(--black);
-  margin-bottom: 12px;
-}
-.client-row {
-  display: flex;
-  border-bottom: 1px solid #ddd;
-}
+.client-box { border: 1px solid var(--black); margin-bottom: 12px; }
+.client-row { display: flex; border-bottom: 1px solid #ddd; }
 .client-row:last-child { border-bottom: none; }
-
-.client-field {
-  display: flex;
-  align-items: center;
-  flex: 1;
-  min-width: 0;
-}
+.client-field { display: flex; align-items: center; flex: 1; min-width: 0; }
 .client-field + .client-field { border-left: 1px solid #ddd; }
 .client-field.full { flex: 1 0 100%; }
-
-.client-field .lbl {
-  font-weight: 700;
-  font-size: 9pt;
-  white-space: nowrap;
-  padding: 6px 10px;
-  background: #f7f7f7;
-  border-right: 1px solid #ccc;
-  flex-shrink: 0;
-}
-.client-field input {
-  border: none;
-  outline: none;
-  font-family: var(--font);
-  font-size: 9.5pt;
-  width: 100%;
-  background: transparent;
-  padding: 6px 10px;
-  min-width: 0;
-}
+.client-field .lbl { font-weight: 700; font-size: 9pt; padding: 6px 10px; background: #f7f7f7; border-right: 1px solid #ccc; flex-shrink: 0; }
+.client-field input { border: none; outline: none; font-family: var(--font); font-size: 9.5pt; width: 100%; background: transparent; padding: 6px 10px; min-width: 0; }
 
 /* ============================================================
    CONCEPTS TABLE
    ============================================================ */
 .concepts-wrap { margin-bottom: 4px; }
-
-.concepts-tbl {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 9.5pt;
-  table-layout: fixed;
-}
-
-/* column widths */
+.concepts-tbl { width: 100%; border-collapse: collapse; font-size: 9.5pt; table-layout: fixed; }
 .concepts-tbl col.c-no    { width: 30px; }
-.concepts-tbl col.c-desc  { width: auto; }
 .concepts-tbl col.c-qty   { width: 46px; }
 .concepts-tbl col.c-unit  { width: 78px; }
 .concepts-tbl col.c-pu    { width: 84px; }
 .concepts-tbl col.c-imp   { width: 84px; }
 .concepts-tbl col.c-del   { width: 28px; }
 
-.concepts-tbl th {
-  background: var(--black);
-  color: var(--white);
-  font-size: 8.5pt;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-  padding: 6px 7px;
-  text-align: left;
-  border: 1px solid var(--black);
-}
+.concepts-tbl th { background: var(--black); color: var(--white); font-size: 8.5pt; font-weight: 700; text-transform: uppercase; padding: 6px 7px; text-align: left; border: 1px solid var(--black); }
 .concepts-tbl th.r { text-align: right; }
 .concepts-tbl th.c { text-align: center; }
-
-.concepts-tbl td {
-  border: 1px solid #bbb;
-  padding: 4px 7px;
-  vertical-align: middle;
-}
+.concepts-tbl td { border: 1px solid #bbb; padding: 4px 7px; vertical-align: middle; }
 .concepts-tbl td.r { text-align: right; }
 .concepts-tbl td.c { text-align: center; }
-
-.concepts-tbl tbody tr:nth-child(even) td { background: #fafafa; }
-.concepts-tbl tbody tr:nth-child(even) td.importe-cell { background: #fafafa; }
-
-/* inputs inside table */
-.concepts-tbl input,
-.concepts-tbl select,
-.concepts-tbl textarea {
-  border: none;
-  outline: none;
-  font-family: var(--font);
-  font-size: 9.5pt;
-  background: transparent;
-  width: 100%;
-}
-.concepts-tbl textarea {
-  resize: none;
-  min-height: 18px;
-  line-height: 1.4;
-  display: block;
-  overflow: hidden;
-}
-.concepts-tbl input[type=number] {
-  text-align: right;
-  -moz-appearance: textfield;
-}
-.concepts-tbl input[type=number]::-webkit-inner-spin-button,
-.concepts-tbl input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
-
-/* select (unidad) */
-.unit-select {
-  -webkit-appearance: none;
-  appearance: none;
-  text-align: center;
-  cursor: pointer;
-  font-size: 8.5pt;
-}
-
-/* description cell wrapper */
+.concepts-tbl input, .concepts-tbl select, .concepts-tbl textarea { border: none; outline: none; font-family: var(--font); font-size: 9.5pt; background: transparent; width: 100%; }
+.concepts-tbl textarea { resize: none; min-height: 18px; line-height: 1.4; display: block; overflow: hidden; }
+.concepts-tbl input[type=number] { text-align: right; -moz-appearance: textfield; }
+.concepts-tbl input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; }
+.unit-select { -webkit-appearance: none; appearance: none; text-align: center; cursor: pointer; font-size: 8.5pt; }
 .desc-cell { position: relative; }
 .desc-cell textarea { padding-right: 22px; }
-.desc-pick-btn {
-  position: absolute;
-  right: 0; top: 0;
-  width: 20px; height: 100%;
-  display: flex; align-items: center; justify-content: center;
-  background: #efefef;
-  border-left: 1px solid #ccc;
-  cursor: pointer;
-  font-size: 10pt;
-  color: #555;
-  border: none;
-  border-left: 1px solid #ccc;
-}
+.desc-pick-btn { position: absolute; right: 0; top: 0; width: 22px; height: 100%; display: flex; align-items: center; justify-content: center; background: #efefef; border-left: 1px solid #ccc; cursor: pointer; font-size: 10pt; color: #555; border: none; }
 .desc-pick-btn:hover { background: #ddd; color: #000; }
-
-/* delete button */
-.btn-del {
-  background: none;
-  border: none;
-  color: #999;
-  font-size: 14pt;
-  line-height: 1;
-  cursor: pointer;
-  padding: 0;
-  width: 100%;
-  text-align: center;
-}
+.btn-del { background: none; border: none; color: #999; font-size: 14pt; cursor: pointer; width: 100%; text-align: center; }
 .btn-del:hover { color: #c00; }
-
-/* ============================================================
-   ADD ROW BUTTON
-   ============================================================ */
-.add-row-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  margin-top: 6px;
-  font-family: var(--font);
-  font-size: 9pt;
-  background: none;
-  border: 1px dashed #777;
-  color: #555;
-  padding: 4px 12px;
-  border-radius: 2px;
-  cursor: pointer;
-}
+.add-row-btn { display: inline-flex; align-items: center; gap: 5px; margin-top: 6px; font-family: var(--font); font-size: 9pt; background: none; border: 1px dashed #777; color: #555; padding: 4px 12px; border-radius: 2px; cursor: pointer; }
 .add-row-btn:hover { border-color: #333; color: #000; background: #f5f5f5; }
 
 /* ============================================================
    TOTALS
    ============================================================ */
-.totals-row {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 8px;
-  margin-bottom: 6px;
-}
-.totals-tbl {
-  border-collapse: collapse;
-  font-size: 10pt;
-  min-width: 230px;
-}
-.totals-tbl td {
-  padding: 4px 10px;
-  border: 1px solid #bbb;
-}
+.totals-row { display: flex; justify-content: flex-end; margin-top: 8px; margin-bottom: 6px; }
+.totals-tbl { border-collapse: collapse; font-size: 10pt; min-width: 230px; }
+.totals-tbl td { padding: 4px 10px; border: 1px solid #bbb; }
 .totals-tbl td:first-child { font-weight: 700; text-align: right; background: #f7f7f7; }
 .totals-tbl td:last-child  { text-align: right; min-width: 100px; }
-.totals-tbl .tr-total td {
-  background: var(--black);
-  color: var(--white);
-  font-size: 11pt;
-  font-weight: 700;
-  border-color: var(--black);
-}
+.totals-tbl .tr-total td { background: var(--black); color: var(--white); font-size: 11pt; font-weight: 700; border-color: var(--black); }
 
 /* ============================================================
-   CONDITIONS
+   CONDITIONS & SIGNATURE
    ============================================================ */
-.conditions {
-  border-top: 1.5px solid var(--black);
-  padding-top: 12px;
-  margin-top: 24px;
-  font-size: 8.5pt;
-  line-height: 1.75;
-}
-.conditions .cond-title {
-  font-weight: 700;
-  font-size: 9pt;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-  letter-spacing: .5px;
-}
-.conditions ul {
-  list-style: none;
-  padding: 0;
-}
+.conditions { border-top: 1.5px solid var(--black); padding-top: 12px; margin-top: 24px; font-size: 8.5pt; line-height: 1.75; }
+.conditions .cond-title { font-weight: 700; font-size: 9pt; text-transform: uppercase; margin-bottom: 6px; }
+.conditions ul { list-style: none; padding: 0; }
 .conditions ul li::before { content: "• "; }
-.conditions ul li { margin-bottom: 2px; }
-.days-inp {
-  border: none;
-  border-bottom: 1px solid #555;
-  width: 38px;
-  text-align: center;
-  font-family: var(--font);
-  font-size: 8.5pt;
-  outline: none;
-  background: transparent;
-  padding: 0 2px;
-}
-
-/* ============================================================
-   SIGNATURE / FOOTER
-   ============================================================ */
-.signature-block {
-  margin-top: 36px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.sig-line {
-  width: 240px;
-  border-top: 1.5px solid var(--black);
-  margin-bottom: 5px;
-}
+.days-inp { border: none; border-bottom: 1px solid #555; width: 38px; text-align: center; font-family: var(--font); font-size: 8.5pt; outline: none; background: transparent; }
+.signature-block { margin-top: 36px; display: flex; flex-direction: column; align-items: center; }
+.sig-line { width: 240px; border-top: 1.5px solid var(--black); margin-bottom: 5px; }
 .sig-name { font-weight: 700; font-size: 9.5pt; }
-.sig-role { font-size: 8.5pt; color: var(--mid); margin-top: 1px; }
-
-.doc-footer-bar {
-  margin-top: 30px;
-  border-top: 1px solid #bbb;
-  padding-top: 6px;
-  text-align: center;
-  font-size: 8pt;
-  color: var(--mid);
-  letter-spacing: .3px;
-}
+.sig-role { font-size: 8.5pt; color: var(--mid); }
+.doc-footer-bar { margin-top: 30px; border-top: 1px solid #bbb; padding-top: 6px; text-align: center; font-size: 8pt; color: var(--mid); }
 
 /* ============================================================
-   SUGGESTIONS MODAL
+   MODAL
    ============================================================ */
-.overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.5);
-  z-index: 10000;
-  align-items: center;
-  justify-content: center;
-}
+.overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 10000; align-items: center; justify-content: center; }
 .overlay.open { display: flex; }
-
-.modal {
-  background: #fff;
-  width: 560px;
-  max-height: 82vh;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 6px 28px rgba(0,0,0,.35);
-  overflow: hidden;
-}
-.modal-head {
-  padding: 14px 18px 10px;
-  border-bottom: 1px solid #ddd;
-  font-size: 11pt;
-  font-weight: 700;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.modal-head button {
-  background: none;
-  border: none;
-  font-size: 16pt;
-  cursor: pointer;
-  color: #777;
-  line-height: 1;
-}
-.modal-head button:hover { color: #000; }
+.modal { background: #fff; width: 560px; max-height: 82vh; border-radius: 4px; display: flex; flex-direction: column; box-shadow: 0 6px 28px rgba(0,0,0,.35); overflow: hidden; }
+.modal-head { padding: 14px 18px 10px; border-bottom: 1px solid #ddd; font-size: 11pt; font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
+.modal-head button { background: none; border: none; font-size: 16pt; cursor: pointer; color: #777; }
 .modal-body { overflow-y: auto; padding: 10px 18px 16px; }
-.cat-title {
-  font-size: 8.5pt;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-  background: #1a1a1a;
-  color: #fff;
-  padding: 4px 10px;
-  margin: 10px -18px 0;
-  /* offset to bleed to edges */
-  width: calc(100% + 36px);
-}
-.cat-title:first-child { margin-top: 0; }
-.sug-item {
-  padding: 6px 10px;
-  font-size: 9.5pt;
-  cursor: pointer;
-  border-bottom: 1px solid #eee;
-  transition: background .1s;
-}
+.cat-title { font-size: 8.5pt; font-weight: 700; text-transform: uppercase; background: #1a1a1a; color: #fff; padding: 4px 10px; margin: 10px -18px 0; width: calc(100% + 36px); }
+.sug-item { padding: 6px 10px; font-size: 9.5pt; cursor: pointer; border-bottom: 1px solid #eee; }
 .sug-item:hover { background: #eef4ff; }
-.modal-foot {
-  padding: 10px 18px;
-  border-top: 1px solid #ddd;
-  display: flex;
-  justify-content: flex-end;
-}
-.modal-foot button {
-  font-family: var(--font);
-  font-size: 9.5pt;
-  background: #1a1a1a;
-  color: #fff;
-  border: none;
-  padding: 6px 20px;
-  border-radius: 3px;
-  cursor: pointer;
-}
-.modal-foot button:hover { background: #333; }
+.modal-foot { padding: 10px 18px; border-top: 1px solid #ddd; display: flex; justify-content: flex-end; }
+.modal-foot button { background: #1a1a1a; color: #fff; border: none; padding: 6px 20px; border-radius: 3px; cursor: pointer; }
 
 /* ============================================================
-   RESPONSIVE — TABLET  (≤ 860px)
+   RESPONSIVE (Screen)
    ============================================================ */
 @media screen and (max-width: 860px) {
-  /* Page fits the viewport */
-  #page {
-    width: 100%;
-    margin: 10px 0 20px;
-    border-radius: 0;
-    box-shadow: none;
-    padding: 14px 16px 16px;
-    min-height: calc(100vh - 56px);
-  }
-
-  /* Toolbar */
-  #toolbar { padding: 7px 12px; gap: 6px; }
-  #toolbar .lbl { display: none; }
-  #toolbar .divider { display: none; }
-  #toolbar button { font-size: 8.5pt; padding: 5px 10px; }
-
-  /* Header shrinks */
-  .company-name { font-size: 17pt; letter-spacing: 1.5px; }
-  .company-sub  { font-size: 7.5pt; }
-  .quote-title  { font-size: 14pt; }
-  .logo-wrap { width: 68px; }
-  .logo-wrap svg { width: 68px; height: 68px; }
-
-  /* Table: allow horizontal scroll */
-  .concepts-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .concepts-tbl  { min-width: 540px; }
-
-  /* Totals full width */
-  .totals-row { justify-content: stretch; }
-  .totals-tbl { width: 100%; }
-
-  /* Conditions */
-  .conditions { font-size: 8pt; }
-
-  /* Modal */
-  .modal { width: 92vw; }
+  #page { width: 100%; margin: 10px 0 20px; padding: 14px 16px; }
 }
-
-/* ============================================================
-   RESPONSIVE — MOBILE  (≤ 560px)
-   ============================================================ */
 @media screen and (max-width: 560px) {
-  /* Dynamic padding set by JS; fallback here */
-  body { padding-top: 100px; }
-
-  /* ── Toolbar: 2-row compact layout ── */
-  #toolbar {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 6px 8px;
-    gap: 5px;
-  }
-  #toolbar button {
-    font-size: 8pt;
-    padding: 7px 10px;
-    flex: 1 1 auto;
-    text-align: center;
-    min-width: 0;
-  }
-  /* Shorten button labels via CSS content on mobile */
-  #toolbar .btn-pdf-lbl::before { content: "🖨 PDF"; }
-  #toolbar .btn-pdf-lbl { font-size: 0; } /* hide original text, show ::before */
-
-  /* ── Page ── */
-  #page {
-    padding: 12px 10px 14px;
-    min-height: auto;
-  }
-
-  /* ── Document header: stacks ── */
-  .doc-header {
-    flex-wrap: wrap;
-    gap: 8px;
-    padding-bottom: 8px;
-    margin-bottom: 8px;
-  }
-  .logo-wrap { width: 52px; }
-  .logo-wrap svg { width: 52px; height: 52px; }
-  .company-info { flex: 1 1 auto; min-width: 0; }
-  .company-name { font-size: 14pt; letter-spacing: 1px; }
-  .company-sub  { font-size: 7pt; line-height: 1.4; }
-  .quote-meta {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid #ddd;
-    padding-top: 6px;
-    text-align: left;
-  }
-  .quote-title { font-size: 12pt; }
-  .folio-line  { align-items: flex-end; }
-
-  /* ── Client section: single column ── */
-  .client-row    { flex-direction: column; }
+  #toolbar { padding: 6px 8px; justify-content: center; }
+  #page { padding: 12px 10px; }
+  .client-row { flex-direction: column; }
   .client-field + .client-field { border-left: none; border-top: 1px solid #ddd; }
-  .client-field .lbl { min-width: 80px; font-size: 8.5pt; padding: 5px 8px; }
-  .client-field input { padding: 5px 8px; font-size: 10pt; }
-
-  /* ── Concepts: CARD VIEW ── */
-  /* Hide the header row visually but keep for print */
-  .concepts-tbl { min-width: unset; font-size: 10pt; }
-  .concepts-wrap { overflow-x: unset; }
-
-  /* Reset table display to block */
-  .concepts-tbl,
-  .concepts-tbl tbody { display: block; width: 100%; }
-
-  /* Hide thead on screen (visible in print via thead group) */
   .concepts-tbl thead { display: none; }
-
-  /* Each row becomes a card */
-  .concepts-tbl tbody tr {
-    display: block;
-    border: 1px solid #bbb;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    padding: 8px 10px;
-    background: #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,.08);
-    position: relative;
-  }
-  .concepts-tbl tbody tr:nth-child(even) { background: #fafafa; }
-
-  /* Each cell becomes a labeled row inside the card */
-  .concepts-tbl tbody td {
-    display: flex;
-    align-items: flex-start;
-    border: none;
-    padding: 3px 0;
-    font-size: 10pt;
-  }
-  /* Label from data-label attribute */
-  .concepts-tbl tbody td::before {
-    content: attr(data-label);
-    font-weight: 700;
-    font-size: 8pt;
-    text-transform: uppercase;
-    color: #666;
-    min-width: 80px;
-    flex-shrink: 0;
-    padding-top: 2px;
-  }
-  /* Hide the row number in card view */
-  .concepts-tbl tbody td.row-num-cell { display: none; }
-  /* Delete button: top-right of card */
-  .concepts-tbl tbody td.del-cell {
-    position: absolute;
-    top: 6px; right: 6px;
-    padding: 0;
-    width: auto;
-  }
-  .concepts-tbl tbody td.del-cell::before { display: none; }
-  .btn-del { font-size: 18pt; color: #bbb; }
-
-  /* Description cell: full width textarea */
-  .concepts-tbl tbody td.desc-cell {
-    flex-direction: column;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 6px;
-    margin-bottom: 4px;
-  }
-  .concepts-tbl tbody td.desc-cell::before {
-    margin-bottom: 4px;
-  }
-  .desc-cell textarea { font-size: 10.5pt; padding-right: 28px; }
-
-  /* Importe cell: bold and right-aligned */
-  .concepts-tbl tbody td.imp-cell {
-    font-weight: 700;
-    justify-content: flex-end;
-    font-size: 11pt;
-    border-top: 1px solid #eee;
-    padding-top: 6px;
-    margin-top: 2px;
-  }
-  .concepts-tbl tbody td.imp-cell::before {
-    flex: 1;
-    text-align: left;
-  }
-
-  /* Add row button: full width */
-  .add-row-btn {
-    width: 100%;
-    justify-content: center;
-    padding: 10px;
-    font-size: 11pt;
-    margin-top: 4px;
-  }
-
-  /* Totals */
-  .totals-tbl { font-size: 10.5pt; }
-  .totals-tbl td { padding: 6px 10px; }
-
-  /* Conditions */
-  .conditions { font-size: 9pt; line-height: 1.7; margin-top: 16px; }
-  .days-inp { width: 44px; font-size: 9pt; }
-
-  /* Signature */
-  .signature-block { margin-top: 28px; }
-  .sig-line { width: 200px; }
-
-  /* Footer bar */
-  .doc-footer-bar { font-size: 7.5pt; margin-top: 16px; }
-
-  /* Modal: full screen */
-  .modal { width: 100vw; max-height: 90vh; border-radius: 0; }
-  .overlay { align-items: flex-end; }
-  .sug-item { font-size: 11pt; padding: 10px 14px; }
-  .modal-head { font-size: 12pt; }
+  .concepts-tbl, .concepts-tbl tbody, .concepts-tbl tr { display: block; width: 100%; }
+  .concepts-tbl tr { border: 1px solid #bbb; margin-bottom: 10px; padding: 8px 10px; position: relative; }
+  .concepts-tbl td { display: flex; border: none; padding: 3px 0; }
+  .concepts-tbl td::before { content: attr(data-label); font-weight: 700; font-size: 8pt; min-width: 80px; color: #666; }
+  .concepts-tbl td.row-num-cell { display: none; }
+  .concepts-tbl td.del-cell { position: absolute; top: 6px; right: 6px; width: auto; }
 }
 
 /* ============================================================
    PRINT STYLES
    ============================================================ */
 @media print {
-  @page {
-    size: letter portrait;
-    margin: 13mm 14mm 16mm 14mm;
-  }
+  @page { size: letter portrait; margin: 13mm 14mm 16mm 14mm; }
+  body { background: #fff; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  #toolbar, .btn-del, .desc-pick-btn, .add-row-btn, .folio-line button, .overlay { display: none !important; }
 
-  /* reset screen chrome */
-  body {
-    background: #fff;
-    padding: 0;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
+  #page { width: 100% !important; margin: 0 !important; padding: 0 !important; padding-bottom: 15mm !important; box-shadow: none !important; min-height: auto !important; }
 
-  /* hide UI */
-  #toolbar,
-  .btn-del,
-  .desc-pick-btn,
-  .add-row-btn,
-  .folio-line button,
-  .overlay { display: none !important; }
+  /* Fixed Footer */
+  .doc-footer-bar { position: fixed; bottom: 0; left: 14mm; right: 14mm; margin: 0 !important; background: #fff; padding: 8px 0; border-top: 1px solid #bbb; z-index: 9999; }
+  #page-spacer { display: none !important; }
 
-  /* remove page box */
-  #page {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    padding-bottom: 15mm; /* Space for the fixed footer */
-    box-shadow: none;
-    min-height: auto !important; 
-  }
-
-  /* Fixed Footer in Print */
-  .doc-footer-bar {
-    position: fixed;
-    bottom: 0;
-    left: 14mm; /* Match page margins */
-    right: 14mm;
-    margin: 0 !important;
-    background: #fff;
-    padding: 8px 0;
-    border-top: 1px solid #bbb;
-    z-index: 9999;
-  }
-
-  /* Reduce spacer in print to keep things tight if near the end of page */
-  #page-spacer {
-    display: none; /* Spacer not needed with fixed footer */
-  }
-
-  /* Restore table layout (mobile CSS converts to block) */
-  .concepts-tbl { 
-    display: table !important; 
-    width: 100% !important; 
-    table-layout: fixed !important; 
-    border-collapse: collapse !important;
-  }
+  /* Table Cleanup for Print */
+  .concepts-tbl { display: table !important; width: 100% !important; table-layout: fixed !important; border-collapse: collapse !important; border: none !important; }
   .concepts-tbl thead { display: table-header-group !important; }
   .concepts-tbl tbody { display: table-row-group !important; }
-  .concepts-tbl tr { display: table-row !important; page-break-inside: avoid; }
-  .concepts-tbl th,
-  .concepts-tbl td { 
-    display: table-cell !important; 
-    border: 1px solid #bbb !important; 
-    padding: 4px 6px !important;
-    vertical-align: middle !important;
-  }
+  .concepts-tbl tr { display: table-row !important; page-break-inside: avoid !important; background: transparent !important; }
+  .concepts-tbl th, .concepts-tbl td { display: table-cell !important; border: 1px solid #bbb !important; padding: 5px 6px !important; vertical-align: middle !important; box-sizing: border-box !important; }
+  
+  /* Alignment & Widths */
+  .concepts-tbl th:nth-child(1), .concepts-tbl td:nth-child(1) { width: 35px !important; text-align: center !important; }
+  .concepts-tbl th:nth-child(2), .concepts-tbl td:nth-child(2) { width: auto !important; text-align: left !important; }
+  .concepts-tbl th:nth-child(3), .concepts-tbl td:nth-child(3) { width: 50px !important; text-align: center !important; }
+  .concepts-tbl th:nth-child(4), .concepts-tbl td:nth-child(4) { width: 85px !important; text-align: center !important; }
+  .concepts-tbl th:nth-child(5), .concepts-tbl td:nth-child(5) { width: 90px !important; text-align: right !important; }
+  .concepts-tbl th:nth-child(6), .concepts-tbl td:nth-child(6) { width: 95px !important; text-align: right !important; }
+  .concepts-tbl th:nth-child(7), .concepts-tbl td:nth-child(7) { display: none !important; }
 
-  /* Force col widths in print */
-  .concepts-tbl col.c-no   { width: 35px !important; }
-  .concepts-tbl col.c-desc { width: auto !important; }
-  .concepts-tbl col.c-qty  { width: 50px !important; }
-  .concepts-tbl col.c-unit { width: 80px !important; }
-  .concepts-tbl col.c-pu   { width: 90px !important; }
-  .concepts-tbl col.c-imp  { width: 90px !important; }
-  .concepts-tbl col.c-del  { width: 0 !important; display: none !important; }
-  .concepts-tbl .del-cell  { display: none !important; }
-  .concepts-tbl th.no-print, .concepts-tbl td.no-print { display: none !important; }
+  .concepts-tbl td::before { display: none !important; }
+  .concepts-tbl textarea { line-height: 1.1 !important; font-size: 9.5pt !important; height: auto !important; display: block !important; overflow: hidden !important; border: none !important; }
 
-  .concepts-tbl tbody td::before { display: none !important; }
+  .client-row { display: flex !important; flex-direction: row !important; }
+  .client-field { flex: 1 !important; display: flex !important; }
+  .client-field.full { flex: 1 0 100% !important; }
+  .client-field + .client-field { border-left: 1px solid #ddd !important; border-top: none !important; }
 
-  /* Compact textareas in print */
-  .concepts-tbl textarea {
-    line-height: 1.1;
-    font-size: 9pt;
-  }
+  #page-bottom { page-break-inside: avoid !important; }
+  .totals-row { page-break-inside: avoid !important; }
+  .conditions { margin-top: 10px !important; page-break-inside: avoid !important; }
+  .signature-block { margin-top: 15px !important; page-break-inside: avoid !important; }
 
-  /* Restore client section */
-  .client-row { flex-direction: row; }
-  .client-field + .client-field { border-left: 1px solid #ddd; border-top: none; }
-
-  /* keep rows whole */
-  .concepts-tbl tr  { page-break-inside: avoid; }
-  #page-bottom      { page-break-inside: avoid; }
-  .totals-row       { page-break-inside: avoid; }
-  .conditions       { margin-top: 10px; page-break-inside: avoid; }
-  .signature-block  { margin-top: 15px; page-break-inside: avoid; }
-
-  /* force B&W */
+  /* Brand Colors in Print */
   .concepts-tbl th { background: #000 !important; color: #fff !important; }
   .totals-tbl .tr-total td { background: #000 !important; color: #fff !important; }
-  .client-field .lbl { background: #f0f0f0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  
-  /* Totals: stretch to full width in print */
-  .totals-row { justify-content: flex-end; }
-  .totals-tbl { width: auto; min-width: 230px; }
-
-  /* remove browser input styling */
-  input, textarea, select {
-    border: none !important;
-    background: transparent !important;
-    -webkit-appearance: none;
-    appearance: none;
-  }
-  .client-box td.lbl { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  /* Logo SVG: preserve fill colors in print */
-  .logo-wrap svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .client-field .lbl { background: #f0f0f0 !important; }
+  .logo-wrap svg { -webkit-print-color-adjust: exact; }
 }
 </style>
 </head>
 <body>
-
-<!-- ============================================================
-     TOOLBAR
-     ============================================================ -->
 <div id="toolbar">
   <span class="lbl">HomeTech Cotizador</span>
   <div class="divider"></div>
   <button onclick="addRow()">+ Agregar concepto</button>
   <button onclick="openModal()">Catálogo de descripciones</button>
-  <div class="divider"></div>
   <button class="btn-danger" onclick="clearAll()">Limpiar todo</button>
-  <div class="divider"></div>
   <button class="btn-primary" onclick="window.print()">🖨 Generar PDF / Imprimir</button>
 </div>
 
-<!-- ============================================================
-     PAGE
-     ============================================================ -->
 <div id="page">
-
-  <!-- ── TOP SECTION (grows) ───────────────────────────────── -->
   <div id="page-top">
-
-    <!-- HEADER -->
     <div class="doc-header">
-
-      <!-- Logo SVG — replica vectorial del logo HomeTech -->
       <div class="logo-wrap">
         <svg viewBox="0 0 100 96" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <clipPath id="houseMask">
-              <polygon points="50,6  8,43  8,90  93,90  93,43"/>
-            </clipPath>
-          </defs>
+          <defs><clipPath id="houseMask"><polygon points="50,6  8,43  8,90  93,90  93,43"/></clipPath></defs>
           <polygon points="50,6  8,43  8,55  50,18  92,55  92,43" fill="#142754"/>
           <rect x="8"  y="42" width="14" height="48" fill="#142754"/>
           <rect x="78" y="42" width="14" height="48" fill="#142754"/>
@@ -878,67 +284,29 @@ body { padding-top: 52px; }
           <polygon points="18,72  36,44  47,44  29,72" fill="#c4884a" clip-path="url(#houseMask)"/>
         </svg>
       </div>
-
       <div class="company-info">
         <div class="company-name">HomeTech</div>
-        <div class="company-sub">Mantenimiento Integral para tu Hogar &nbsp;·&nbsp; Plomería &nbsp;·&nbsp; Electricidad &nbsp;·&nbsp; Albañilería</div>
+        <div class="company-sub">Mantenimiento Integral &nbsp;·&nbsp; Plomería &nbsp;·&nbsp; Electricidad &nbsp;·&nbsp; Albañilería</div>
       </div>
-
       <div class="quote-meta">
         <div class="quote-title">Cotización</div>
-        <div class="folio-line">
-          <strong id="folioDisplay">HT-20260419-001</strong>
-          <button onclick="newFolio()" title="Generar nuevo folio">↻ Nuevo folio</button>
-        </div>
+        <div class="folio-line"><strong id="folioDisplay">HT-000000</strong><button onclick="newFolio()">↻ Folio</button></div>
       </div>
     </div>
 
     <div class="client-box">
       <div class="client-row">
-        <div class="client-field">
-          <span class="lbl">Fecha</span>
-          <input type="date" id="fecha">
-        </div>
-        <div class="client-field">
-          <span class="lbl">Teléfono</span>
-          <input type="tel" id="telefono" placeholder="(___) ___-____">
-        </div>
+        <div class="client-field"><span class="lbl">Fecha</span><input type="date" id="fecha"></div>
+        <div class="client-field"><span class="lbl">Teléfono</span><input type="tel" id="telefono" placeholder="(___) ___-____"></div>
       </div>
-      <div class="client-row">
-        <div class="client-field full">
-          <span class="lbl">Cliente</span>
-          <input type="text" id="cliente" placeholder="Nombre completo del cliente">
-        </div>
-      </div>
-      <div class="client-row">
-        <div class="client-field full">
-          <span class="lbl">Dirección</span>
-          <input type="text" id="direccion" placeholder="Calle, número, colonia, ciudad">
-        </div>
-      </div>
+      <div class="client-row"><div class="client-field full"><span class="lbl">Cliente</span><input type="text" id="cliente"></div></div>
+      <div class="client-row"><div class="client-field full"><span class="lbl">Dirección</span><input type="text" id="direccion"></div></div>
     </div>
 
     <div class="concepts-wrap">
       <table class="concepts-tbl">
-        <colgroup>
-          <col class="c-no">
-          <col class="c-desc">
-          <col class="c-qty">
-          <col class="c-unit">
-          <col class="c-pu">
-          <col class="c-imp">
-          <col class="c-del">
-        </colgroup>
         <thead>
-          <tr>
-            <th class="c">No.</th>
-            <th>Descripción</th>
-            <th class="c">Cant.</th>
-            <th class="c">Unidad</th>
-            <th class="r">P. Unitario</th>
-            <th class="r">Importe</th>
-            <th class="c no-print"></th>
-          </tr>
+          <tr><th class="c">No.</th><th>Descripción</th><th class="c">Cant.</th><th class="c">Unidad</th><th class="r">P. Unitario</th><th class="r">Importe</th><th class="c no-print"></th></tr>
         </thead>
         <tbody id="tbody"></tbody>
       </table>
@@ -952,36 +320,32 @@ body { padding-top: 52px; }
         <tr class="tr-total"><td>TOTAL</td><td id="t-total">$0.00</td></tr>
       </table>
     </div>
-
-  </div><!-- /page-top -->
-
+  </div>
   <div id="page-spacer"></div>
-
   <div id="page-bottom">
     <div class="conditions">
       <div class="cond-title">Condiciones</div>
       <ul>
-        <li>50% de anticipo para inicio de los trabajos y adquisición de materiales, y 50% al finalizar el proyecto.</li>
-        <li>El presupuesto incluye material y mano de obra.</li>
-        <li>El tiempo estimado de ejecución para la presente propuesta es de <input class="days-inp" id="diasEjec" type="text" placeholder="___"> días, sujetos a la disponibilidad de acceso al área de trabajo y condiciones climáticas.</li>
-        <li>Esta cotización tiene una vigencia de 15 días naturales a partir de la fecha de emisión.</li>
+        <li>50% de anticipo y 50% al finalizar.</li>
+        <li>Incluye material y mano de obra.</li>
+        <li>Ejecución en <input class="days-inp" id="diasEjec" type="text"> días.</li>
+        <li>Vigencia 15 días.</li>
       </ul>
     </div>
-
     <div class="signature-block">
       <div class="sig-line"></div>
       <div class="sig-name">Elabora: Ing. Pedro López</div>
       <div class="sig-role">HomeTech – Mantenimiento Integral para tu Hogar</div>
     </div>
-
-    <div class="doc-footer-bar">HomeTech &nbsp;·&nbsp; Mantenimiento Integral para tu Hogar &nbsp;·&nbsp; Tel: (___) ___-____</div>
+    <div class="doc-footer-bar">HomeTech &nbsp;·&nbsp; Mantenimiento Integral &nbsp;·&nbsp; Tel: (___) ___-____</div>
   </div>
 </div>
 
 <div class="overlay" id="overlay">
   <div class="modal">
-    <div class="modal-head"><span>Seleccionar descripción</span><button onclick="closeModal()" title="Cerrar">&times;</button></div>
+    <div class="modal-head"><span>Seleccionar descripción</span><button onclick="closeModal()">&times;</button></div>
     <div class="modal-body" id="modal-body">
+      <!-- Catalog content similar to index.html -->
       <div class="cat-title">Plomería</div>
       <div class="sug-item" onclick="pickDesc(this)">Reparación de fuga en tubería</div>
       <div class="sug-item" onclick="pickDesc(this)">Cambio de llave mezcladora</div>
@@ -1133,23 +497,17 @@ function addRow(descText = '') {
   rowIndex++;
   const tbody = $('tbody');
   const tr = document.createElement('tr');
-  tr.dataset.id = rowIndex;
   tr.innerHTML = `
     <td class="c row-num row-num-cell" data-label="#">${tbody.rows.length + 1}</td>
     <td class="desc-cell" data-label="Descripción">
-      <textarea class="desc-ta" rows="1" oninput="autoH(this)" placeholder="Descripción del concepto…">${descText}</textarea>
-      <button class="desc-pick-btn" title="Elegir del catálogo" onclick="openModalForRow(this)">☰</button>
+      <textarea class="desc-ta" rows="1" oninput="autoH(this)">${descText}</textarea>
+      <button class="desc-pick-btn" onclick="openModalForRow(this)">☰</button>
     </td>
-    <td data-label="Cant."><input type="number" class="qty" value="1" min="0" step="any" oninput="recalcRow(this)" onfocus="this.select()"></td>
-    <td data-label="Unidad">
-      <select class="unit-select">
-        <option>PZA</option><option>SERVICIO</option><option>VISITA</option><option>KIT</option><option>PAQUETE</option>
-        <option>JUEGO</option><option>M2</option><option>ML</option><option>LOTE</option><option>HRS</option>
-      </select>
-    </td>
-    <td data-label="P. Unitario"><input type="number" class="pu" value="0" min="0" step="0.01" oninput="recalcRow(this)" onfocus="this.select()"></td>
+    <td data-label="Cant."><input type="number" class="qty" value="1" step="any" oninput="recalcRow(this)"></td>
+    <td data-label="Unidad"><select class="unit-select"><option>PZA</option><option>SERVICIO</option><option>VISITA</option><option>M2</option><option>ML</option></select></td>
+    <td data-label="P. Unitario"><input type="number" class="pu" value="0" step="0.01" oninput="recalcRow(this)"></td>
     <td class="r imp-cell" data-label="Importe">$0.00</td>
-    <td class="c del-cell"><button class="btn-del" onclick="delRow(this)" title="Eliminar">&times;</button></td>
+    <td class="c del-cell no-print"><button class="btn-del" onclick="delRow(this)">&times;</button></td>
   `;
   tbody.appendChild(tr);
   if (descText) autoH(tr.querySelector('.desc-ta'));
@@ -1175,24 +533,15 @@ function recalcAll() {
   $('t-total').textContent = fmt(total);
 }
 function autoH(el) { el.style.height = 'auto'; el.style.height = el.scrollHeight + 'px'; }
-function clearAll() {
-  if (!confirm('¿Limpiar todos los conceptos?')) return;
-  $('tbody').innerHTML = ''; rowIndex = 0; recalcAll(); addRow();
-}
+function clearAll() { if (confirm('¿Limpiar?')) { $('tbody').innerHTML = ''; addRow(); } }
 let targetRow = null; 
 function openModal() { addRow(); targetRow = $('tbody').lastElementChild; $('overlay').classList.add('open'); }
 function openModalForRow(btn) { targetRow = btn.closest('tr'); $('overlay').classList.add('open'); }
 function closeModal() { $('overlay').classList.remove('open'); targetRow = null; }
-function pickDesc(el) {
-  if (!targetRow) return;
-  const ta = targetRow.querySelector('.desc-ta');
-  ta.value = el.textContent.trim();
-  autoH(ta); closeModal(); ta.focus();
-}
-$('overlay').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
-function adjustPadding() { const tb = $('toolbar'); if (tb) document.body.style.paddingTop = tb.offsetHeight + 'px'; }
-window.addEventListener('resize', adjustPadding);
+function pickDesc(el) { if (targetRow) { const ta = targetRow.querySelector('.desc-ta'); ta.value = el.textContent.trim(); autoH(ta); closeModal(); } }
 adjustPadding();
+window.addEventListener('resize', adjustPadding);
+function adjustPadding() { const tb = $('toolbar'); if (tb) document.body.style.paddingTop = tb.offsetHeight + 'px'; }
 addRow();
 </script>
 </body>
